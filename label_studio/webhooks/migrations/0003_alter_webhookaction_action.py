@@ -13,6 +13,6 @@ class Migration(migrations.Migration):
         migrations.AlterField(
             model_name='webhookaction',
             name='action',
-            field=models.CharField(choices=[['PROJECT_CREATED', 'Project created'], ['PROJECT_UPDATED', 'Project updated'], ['PROJECT_DELETED', 'Project deleted'], ['TASKS_CREATED', 'Task created'], ['TASKS_DELETED', 'Task deleted'], ['ANNOTATION_CREATED', 'Annotation created'], ['ANNOTATIONS_CREATED', 'Annotations created'], ['ANNOTATION_UPDATED', 'Annotation updated'], ['ANNOTATIONS_DELETED', 'Annotation deleted'], ['LABEL_LINK_CREATED', 'Label link created'], ['LABEL_LINK_UPDATED', 'Label link updated'], ['LABEL_LINK_DELETED', 'Label link deleted']], db_index=True, help_text='Action value', max_length=128, verbose_name='action of webhook'),
+            field=models.CharField(choices=[['PROJECT_CREATED', '创建项目'], ['PROJECT_UPDATED', 'Project updated'], ['PROJECT_DELETED', 'Project deleted'], ['TASKS_CREATED', 'Task created'], ['TASKS_DELETED', 'Task deleted'], ['ANNOTATION_CREATED', 'Annotation created'], ['ANNOTATIONS_CREATED', 'Annotations created'], ['ANNOTATION_UPDATED', 'Annotation updated'], ['ANNOTATIONS_DELETED', 'Annotation deleted'], ['LABEL_LINK_CREATED', 'Label link created'], ['LABEL_LINK_UPDATED', 'Label link updated'], ['LABEL_LINK_DELETED', 'Label link deleted']], db_index=True, help_text='Action value', max_length=128, verbose_name='action of webhook'),
         ),
     ]

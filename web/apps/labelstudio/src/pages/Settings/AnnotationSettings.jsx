@@ -25,7 +25,7 @@ export const AnnotationSettings = () => {
   return (
     <Block name="annotation-settings">
       <Elem name={"wrapper"}>
-        <h1>Annotation Settings</h1>
+        <h1>标注设置</h1>
         <Block name="settings-wrapper">
           <Form
             ref={formRef}
@@ -35,28 +35,28 @@ export const AnnotationSettings = () => {
             onSubmit={updateProject}
           >
             <Form.Row columnCount={1}>
-              <Elem name={"header"}>Labeling Instructions</Elem>
+              <Elem name={"header"}>标注规则</Elem>
               <div style={{ color: "var(--sand_600)", fontSize: "14px" }}>
-                <p style={{ marginBottom: "0" }}>Write instructions to help users complete labeling tasks.</p>
+{/*                 <p style={{ marginBottom: "0" }}>Write instructions to help users complete labeling tasks.</p> */}
                 <p style={{ marginTop: "8px" }}>
-                  The instruction field supports HTML markup and it allows use of images, iframes (pdf).
+                  标注规则支持HTML和markup格式，且支持嵌入图片、PDF文档等，清晰的标注规则使标注人员更容易展开工作。
                 </p>
               </div>
-              <div>
-                <Toggle label="Show before labeling" name="show_instruction" />
-              </div>
               <TextArea name="expert_instruction" style={{ minHeight: 128, maxWidth: "520px" }} />
+               <div>
+                <Toggle label="是否在标注之前进行展示" name="show_instruction" />
+              </div>
             </Form.Row>
 
             <Divider height={32} />
 
             <Form.Row columnCount={1}>
               <br />
-              <Elem name={"header"}>Prelabeling</Elem>
+              <Elem name={"header"}>模型预标注</Elem>
               <div>
                 <Toggle
-                  label="Use predictions to prelabel tasks"
-                  description={<span>Enable and select which set of predictions to use for prelabeling.</span>}
+                  label="使用模型进行预标注"
+//                   description={<span>使用模型进行预标注可以减轻标注人员工作量</span>}
                   name="show_collab_predictions"
                   onChange={(e) => {
                     setCollab(e.target.checked);
@@ -69,10 +69,10 @@ export const AnnotationSettings = () => {
 
             <Form.Actions>
               <Form.Indicator>
-                <span case="success">Saved!</span>
+                <span case="success">保存成功</span>
               </Form.Indicator>
               <Button type="submit" look="primary" style={{ width: 120 }}>
-                Save
+                保存
               </Button>
             </Form.Actions>
           </Form>
@@ -82,5 +82,5 @@ export const AnnotationSettings = () => {
   );
 };
 
-AnnotationSettings.title = "Annotation";
+AnnotationSettings.title = "标注";
 AnnotationSettings.path = "/annotation";

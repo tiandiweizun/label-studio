@@ -10,14 +10,14 @@ import { Block, cn } from "../../utils/bem";
 
 export const WebhookDeleteModal = ({ onDelete }) => {
   return modal({
-    title: "Delete",
+    title: "删除",
     body: () => {
       const ctrl = useModalControls();
       const rootClass = cn("webhook-delete-modal");
       return (
         <div className={rootClass}>
           <div className={rootClass.elem("modal-text")}>
-            Are you sure you want to delete the webhook? This action cannot be undone.
+            你确定删除webhook吗
           </div>
         </div>
       );
@@ -33,7 +33,7 @@ export const WebhookDeleteModal = ({ onDelete }) => {
               ctrl.hide();
             }}
           >
-            Cancel
+            取消
           </Button>
           <Button
             look="destructive"
@@ -43,7 +43,7 @@ export const WebhookDeleteModal = ({ onDelete }) => {
               ctrl.hide();
             }}
           >
-            Delete
+            删除
           </Button>
         </Space>
       );

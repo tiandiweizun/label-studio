@@ -38,14 +38,14 @@ export const StorageCard = ({ rootClass, target, storage, onEditStorage, onDelet
 
   return (
     <Card
-      header={storageData.title?.slice?.(0, 70) ?? `Untitled ${storageData.type}`}
+      header={storageData.title?.slice?.(0, 70) ?? `未命名 ${storageData.type}`}
       extra={
         <Dropdown.Trigger
           align="right"
           content={
             <Menu size="compact" style={{ width: 110 }}>
-              <Menu.Item onClick={() => onEditStorage(storageData)}>Edit</Menu.Item>
-              <Menu.Item onClick={() => onDeleteStorage(storageData)}>Delete</Menu.Item>
+              <Menu.Item onClick={() => onEditStorage(storageData)}>编辑</Menu.Item>
+              <Menu.Item onClick={() => onDeleteStorage(storageData)}>删除</Menu.Item>
             </Menu>
           }
         >
@@ -62,11 +62,11 @@ export const StorageCard = ({ rootClass, target, storage, onEditStorage, onDelet
       <div className={rootClass.elem("sync")}>
         <div>
           <Button waiting={syncing} onClick={startSync} disabled={notSyncedYet}>
-            Sync Storage
+            同步云存储
           </Button>
           {notSyncedYet && (
             <div className={rootClass.elem("sync-count")}>
-              Syncing may take some time, please refresh the page to see the current status.
+              同步需要花费一定时间，可以通过刷新页面来获取同步状态
             </div>
           )}
         </div>

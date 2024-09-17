@@ -1,4 +1,5 @@
 import { formatDistance } from "date-fns";
+import {zhCN} from "date-fns/locale"
 import { useCallback, useEffect, useState } from "react";
 import { Pagination, Spinner, Userpic } from "../../../components";
 import { usePage, usePageSize } from "../../../components/Pagination/Pagination";
@@ -93,7 +94,7 @@ export const PeopleList = ({ onSelect, selectedUser, defaultSelected }) => {
                         {user.first_name}
                       </Elem>
                       <Elem name="field" mix="last-activity">
-                        {formatDistance(new Date(user.last_activity), new Date(), { addSuffix: true })}
+                        {formatDistance(new Date(user.last_activity), new Date(), { addSuffix: true , locale: zhCN})}
                       </Elem>
                     </Elem>
                   );

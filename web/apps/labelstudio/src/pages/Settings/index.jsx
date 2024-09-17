@@ -10,7 +10,7 @@ import { PredictionsSettings } from "./PredictionsSettings/PredictionsSettings";
 import { StorageSettings } from "./StorageSettings/StorageSettings";
 import { isInLicense, LF_CLOUD_STORAGE_FOR_MANAGERS } from "../../utils/license-flags";
 
-const isAllowCloudStorage = !isInLicense(LF_CLOUD_STORAGE_FOR_MANAGERS);
+const isAllowCloudStorage = false;
 
 export const MenuLayout = ({ children, ...routeProps }) => {
   return (
@@ -43,7 +43,7 @@ const pages = {
 isAllowCloudStorage && (pages.StorageSettings = StorageSettings);
 
 export const SettingsPage = {
-  title: "Settings",
+  title: "设置",
   path: "/settings",
   exact: true,
   layout: MenuLayout,

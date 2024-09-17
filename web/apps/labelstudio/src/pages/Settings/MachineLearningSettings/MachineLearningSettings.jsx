@@ -102,22 +102,22 @@ export const MachineLearningSettings = () => {
         {loaded && backends.length === 0 && (
           <EmptyState
             icon={<IconModels />}
-            title="Let’s connect your first model"
-            description="Connect a machine learning model to generate predictions. These predictions can be compared side by side, used for efficient pre‒labeling and, to aid in active learning, directing users to the most impactful labeling tasks."
+//             title="连接模型"
+//             description="Connect a machine learning model to generate predictions. These predictions can be compared side by side, used for efficient pre‒labeling and, to aid in active learning, directing users to the most impactful labeling tasks."
             action={
               <Button primary onClick={() => showMLFormModal()}>
-                Connect Model
+                连接模型
               </Button>
             }
-            footer={
-              <div>
-                Need help?
-                <br />
-                <a href="https://labelstud.io/guide/ml" target="_blank" rel="noreferrer">
-                  Learn more about connecting models in our docs
-                </a>
-              </div>
-            }
+//             footer={
+//               <div>
+//                 Need help?
+//                 <br />
+//                 <a href="https://labelstud.io/guide/ml" target="_blank" rel="noreferrer">
+//                   Learn more about connecting models in our docs
+//                 </a>
+//               </div>
+//             }
           />
         )}
         <MachineLearningList
@@ -183,5 +183,5 @@ export const MachineLearningSettings = () => {
   );
 };
 
-MachineLearningSettings.title = "Model";
+MachineLearningSettings.title = "模型";
 MachineLearningSettings.path = "/ml";

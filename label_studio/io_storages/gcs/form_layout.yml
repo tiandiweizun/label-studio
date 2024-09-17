@@ -2,14 +2,14 @@
 title_bucket_prefix: &title_bucket_prefix
   - type: text
     name: title
-    label: Storage Title
+    label: 云存储标题
   - type: text
     name: bucket
-    label: Bucket Name
+    label: 桶名称
     required: true
   - type: text
     name: prefix
-    label: Bucket Prefix
+    label: 桶前缀
 
 gcs_credentials: &gcs_credentials
   - type: password
@@ -25,7 +25,7 @@ gcs_credentials: &gcs_credentials
 project_id: &project_id
   - type: text
     name: google_project_id
-    label: Google Project ID
+    label: 谷歌项目id
     placeholder: 'Leave blank to inherit from the Google Application Credentials...'
 
 ImportStorage:
@@ -37,7 +37,7 @@ ImportStorage:
     fields:
       - type: text
         name: regex_filter
-        label: File Filter Regex
+        label: 文件过滤正则
         placeholder: '.*csv or .*(jpe?g|png|tiff) or .\w+-\d+.text'
         validators:
           - regexp

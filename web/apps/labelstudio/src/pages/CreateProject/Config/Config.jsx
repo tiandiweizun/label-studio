@@ -28,15 +28,8 @@ const configClass = cn("configure");
 
 const EmptyConfigPlaceholder = () => (
   <div className={configClass.elem("empty-config")}>
-    <p>Your labeling configuration is empty. It is required to label your data.</p>
-    <p>
-      Start from one of our predefined templates or create your own config on the Code panel. The labeling config is
-      XML-based and you can{" "}
-      <a href="https://labelstud.io/tags/" target="_blank" rel="noreferrer">
-        read about the available tags in our documentation
-      </a>
-      .
-    </p>
+    <p>标注界面配置为空，可视化无法进行展示</p>
+    <p>可以通过点击浏览模板选择一个预置的标注界面进行配置</p>
   </div>
 );
 
@@ -463,12 +456,12 @@ const Configurator = ({
   return (
     <div className={configClass}>
       <div className={configClass.elem("container")}>
-        <h1>Labeling Interface{hasChanges ? " *" : ""}</h1>
+        <h1>标注界面{hasChanges ? " *" : ""}</h1>
         <header>
           <button type="button" data-leave={true} onClick={onBrowse}>
-            Browse Templates
+            浏览模板
           </button>
-          <ToggleItems items={{ code: "Code", visual: "Visual" }} active={configure} onSelect={onSelect} />
+          <ToggleItems items={{ code: "代码", visual: "设计" }} active={configure} onSelect={onSelect} />
         </header>
         <div className={configClass.elem("editor")}>
           {configure === "code" && (
@@ -517,16 +510,16 @@ const Configurator = ({
           )}
         </div>
         {disableSaveButton !== true && onSaveClick && (
-          <Form.Actions size="small" extra={configure === "code" && extra} valid>
+          <Form.Actions size="small" extra={configure === "code"} valid>
             {saved && (
               <Block name="form-indicator">
                 <Elem tag="span" mod={{ type: "success" }} name="item">
-                  Saved!
+                  已保存
                 </Elem>
               </Block>
             )}
             <Button look="primary" size="compact" style={{ width: 120 }} onClick={onSave} waiting={waiting}>
-              {waiting ? "Saving..." : "Save"}
+              {waiting ? "正在保存" : "保存"}
             </Button>
             {isFF(FF_UNSAVED_CHANGES) && <UnsavedChanges hasChanges={hasChanges} onSave={onSave} />}
           </Form.Actions>

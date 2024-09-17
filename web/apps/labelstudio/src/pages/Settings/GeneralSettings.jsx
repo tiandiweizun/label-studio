@@ -21,8 +21,8 @@ export const GeneralSettings = () => {
   const colors = ["#FDFDFC", "#FF4C25", "#FF750F", "#ECB800", "#9AC422", "#34988D", "#617ADA", "#CC6FBE"];
 
   const samplings = [
-    { value: "Sequential", label: "Sequential", description: "Tasks are ordered by Data manager ordering" },
-    { value: "Uniform", label: "Random", description: "Tasks are chosen with uniform random" },
+    { value: "Sequential", label: "顺序", description: "按照数据导入顺序" },
+    { value: "Uniform", label: "随机", description: "随机选择一个数据" },
   ];
 
   return (
@@ -32,35 +32,35 @@ export const GeneralSettings = () => {
         <Block name="settings-wrapper">
           <Form action="updateProject" formData={{ ...project }} params={{ pk: project.id }} onSubmit={updateProject}>
             <Form.Row columnCount={1} rowGap="16px">
-              <Input name="title" label="Project Name" />
+              <Input name="title" label="项目名称" />
 
-              <TextArea name="description" label="Description" style={{ minHeight: 128 }} />
-              {isFF(FF_LSDV_E_297) && (
-                <Block name="workspace-placeholder">
-                  <Elem name="badge-wrapper">
-                    <Elem name="title">工作目录</Elem>
-                    <EnterpriseBadge />
-                  </Elem>
-                  <Select placeholder="Select an option" disabled options={[]} />
-                  <Caption>
-                    Simplify project management by organizing projects into workspaces.{" "}
-                    <a
-                      target="_blank"
-                      href={createURL(
-                        "https://docs.humansignal.com/guide/manage_projects#Create-workspaces-to-organize-projects",
-                        {
-                          experiment: "project_settings_tip",
-                          treatment: "simplify_project_management",
-                        },
-                      )}
-                      rel="noreferrer"
-                    >
-                      Learn more
-                    </a>
-                  </Caption>
-                </Block>
-              )}
-              <RadioGroup name="color" label="Color" size="large" labelProps={{ size: "large" }}>
+              <TextArea name="description" label="详细描述" style={{ minHeight: 128 }} />
+{/*               {isFF(FF_LSDV_E_297) && ( */}
+{/*                 <Block name="workspace-placeholder"> */}
+{/*                   <Elem name="badge-wrapper"> */}
+{/*                     <Elem name="title">工作目录</Elem> */}
+{/*                     <EnterpriseBadge /> */}
+{/*                   </Elem> */}
+{/*                   <Select placeholder="Select an option" disabled options={[]} /> */}
+{/*                   <Caption> */}
+{/*                     Simplify project management by organizing projects into workspaces.{" "} */}
+{/*                     <a */}
+{/*                       target="_blank" */}
+{/*                       href={createURL( */}
+{/*                         "https://docs.humansignal.com/guide/manage_projects#Create-workspaces-to-organize-projects", */}
+{/*                         { */}
+{/*                           experiment: "project_settings_tip", */}
+{/*                           treatment: "simplify_project_management", */}
+{/*                         }, */}
+{/*                       )} */}
+{/*                       rel="noreferrer" */}
+{/*                     > */}
+{/*                       Learn more */}
+{/*                     </a> */}
+{/*                   </Caption> */}
+{/*                 </Block> */}
+{/*               )} */}
+              <RadioGroup name="color" label="颜色" size="large" labelProps={{ size: "large" }}>
                 {colors.map((color) => (
                   <RadioGroup.Button key={color} value={color}>
                     <Block name="color" style={{ "--background": color }} />
@@ -68,51 +68,51 @@ export const GeneralSettings = () => {
                 ))}
               </RadioGroup>
 
-              <RadioGroup label="Task Sampling" labelProps={{ size: "large" }} name="sampling" simple>
+              <RadioGroup label="采样方式" labelProps={{ size: "large" }} name="采样" simple>
                 {samplings.map(({ value, label, description }) => (
                   <RadioGroup.Button
                     key={value}
-                    value={`${value} sampling`}
-                    label={`${label} sampling`}
+                    value={`${value}采样`}
+                    label={`${label}采样`}
                     description={description}
                   />
                 ))}
-                {isFF(FF_LSDV_E_297) && (
-                  <RadioGroup.Button
-                    key="uncertainty-sampling"
-                    value=""
-                    label={
-                      <>
-                        Uncertainty sampling <EnterpriseBadge />
-                      </>
-                    }
-                    disabled
-                    description={
-                      <>
-                        Tasks are chosen according to model uncertainty score (active learning mode).{" "}
-                        <a
-                          target="_blank"
-                          href={createURL("https://docs.humansignal.com/guide/active_learning", {
-                            experiment: "project_settings_workspace",
-                            treatment: "workspaces",
-                          })}
-                          rel="noreferrer"
-                        >
-                          Learn more
-                        </a>
-                      </>
-                    }
-                  />
-                )}
+{/*                 {isFF(FF_LSDV_E_297) && ( */}
+{/*                   <RadioGroup.Button */}
+{/*                     key="uncertainty-sampling" */}
+{/*                     value="" */}
+{/*                     label={ */}
+{/*                       <> */}
+{/*                         Uncertainty sampling <EnterpriseBadge /> */}
+{/*                       </> */}
+{/*                     } */}
+{/*                     disabled */}
+{/*                     description={ */}
+{/*                       <> */}
+{/*                         Tasks are chosen according to model uncertainty score (active learning mode).{" "} */}
+{/*                         <a */}
+{/*                           target="_blank" */}
+{/*                           href={createURL("https://docs.humansignal.com/guide/active_learning", { */}
+{/*                             experiment: "project_settings_workspace", */}
+{/*                             treatment: "workspaces", */}
+{/*                           })} */}
+{/*                           rel="noreferrer" */}
+{/*                         > */}
+{/*                           Learn more */}
+{/*                         </a> */}
+{/*                       </> */}
+{/*                     } */}
+{/*                   /> */}
+{/*                 )} */}
               </RadioGroup>
             </Form.Row>
 
             <Form.Actions>
               <Form.Indicator>
-                <span case="success">Saved!</span>
+                <span case="success">保存成功</span>
               </Form.Indicator>
               <Button type="submit" look="primary" style={{ width: 120 }}>
-                Save
+                保存
               </Button>
             </Form.Actions>
           </Form>
@@ -123,6 +123,6 @@ export const GeneralSettings = () => {
   );
 };
 
-GeneralSettings.menuItem = "General";
+GeneralSettings.menuItem = "通用";
 GeneralSettings.path = "/";
 GeneralSettings.exact = true;

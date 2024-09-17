@@ -79,8 +79,8 @@ const ProjectCard = ({ project }) => {
               <Dropdown.Trigger
                 content={
                   <Menu contextual>
-                    <Menu.Item href={`/projects/${project.id}/settings`}>Settings</Menu.Item>
-                    <Menu.Item href={`/projects/${project.id}/data?labeling=1`}>Label</Menu.Item>
+                    <Menu.Item href={`/projects/${project.id}/settings`}>配置</Menu.Item>
+                    <Menu.Item href={`/projects/${project.id}/data?labeling=1`}>标注</Menu.Item>
                   </Menu>
                 }
               >
@@ -112,7 +112,7 @@ const ProjectCard = ({ project }) => {
         </Elem>
         <Elem name="description">{project.description}</Elem>
         <Elem name="info">
-          <Elem name="created-date">{format(new Date(project.created_at), "dd MMM ’yy, HH:mm")}</Elem>
+          <Elem name="created-date">{format(new Date(project.created_at), "yyyy/MM/dd HH:mm:ss")}</Elem>
           <Elem name="created-by">
             <Userpic src="#" user={project.created_by} showUsername />
           </Elem>

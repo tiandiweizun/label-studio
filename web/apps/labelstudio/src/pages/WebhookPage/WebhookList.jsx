@@ -32,8 +32,9 @@ const WebhookList = ({ onSelectActive, onAddWebhook, webhooks, fetchWebhooks }) 
   return (
     <Block name="webhook">
       <h1>Webhooks</h1>
+      <p>当某些特定的事件发生时（如删除项目），允许使用webhook通知外部服务</p>
       <Elem name="controls">
-        <Button onClick={onAddWebhook}>Add Webhook</Button>
+        <Button onClick={onAddWebhook}>添加 Webhook</Button>
       </Elem>
       <Elem>
         {webhooks.length === 0 ? null : (
@@ -49,11 +50,11 @@ const WebhookList = ({ onSelectActive, onAddWebhook, webhooks, fetchWebhooks }) 
                       {obj.url}
                     </Elem>
                   </Elem>
-                  <Elem name="item-date">Created {format(new Date(obj.created_at), "dd MMM yyyy, HH:mm")}</Elem>
+                  <Elem name="item-date">创建于 {format(new Date(obj.created_at), "yyyy/MM/dd HH:mm:ss")}</Elem>
                 </Elem>
                 <Elem name="item-control">
                   <Button onClick={() => onSelectActive(obj.id)} icon={<LsPencil />}>
-                    Edit
+                    编辑
                   </Button>
                   <Button
                     onClick={() =>
@@ -67,7 +68,7 @@ const WebhookList = ({ onSelectActive, onAddWebhook, webhooks, fetchWebhooks }) 
                     look="danger"
                     icon={<LsCross />}
                   >
-                    Delete
+                    删除
                   </Button>
                 </Elem>
               </Elem>

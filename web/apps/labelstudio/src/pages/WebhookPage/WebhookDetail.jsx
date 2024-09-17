@@ -97,7 +97,7 @@ const WebhookDetail = ({ webhook, webhooksInfo, fetchWebhooks, onBack, onSelectA
           >
             Webhooks
           </Elem>{" "}
-          / {webhook === null ? "New Webhook" : "Edit Webhook"}
+          / {webhook === null ? "创建Webhook" : "编辑Webhook"}
         </>
       </Elem>
       <Elem name="content">
@@ -129,7 +129,7 @@ const WebhookDetail = ({ webhook, webhooksInfo, fetchWebhooks, onBack, onSelectA
               <Space className={rootClass.elem("url-space")}>
                 <Input name="url" className={rootClass.elem("url-input")} placeholder="URL" />
                 <Space align="end" className={rootClass.elem("activator")}>
-                  <span className={rootClass.elem("black-text")}>Is Active</span>
+                  <span className={rootClass.elem("black-text")}>是否激活</span>
                   <Toggle
                     skip
                     checked={isActive}
@@ -144,7 +144,7 @@ const WebhookDetail = ({ webhook, webhooksInfo, fetchWebhooks, onBack, onSelectA
               <div className={rootClass.elem("headers")}>
                 <div className={rootClass.elem("headers-content")}>
                   <Space spread className={rootClass.elem("headers-control")}>
-                    <Label text="Headers" large />
+                    <Label text="URL Headers" large />
                     <Button
                       type="button"
                       onClick={onAddHeaderClick}
@@ -195,14 +195,14 @@ const WebhookDetail = ({ webhook, webhooksInfo, fetchWebhooks, onBack, onSelectA
                     onChange={(e) => {
                       setSendPayload(e.target.checked);
                     }}
-                    label="Send payload"
+                    label="发送项目行为数据"
                   />
                 </Elem>
                 <Elem name="content-row">
                   <Toggle
                     skip
                     checked={sendForAllActions}
-                    label="Send for all actions"
+                    label="将所有项目行为通知webhook"
                     onChange={(e) => {
                       setSendForAllActions(e.target.checked);
                     }}
@@ -212,7 +212,7 @@ const WebhookDetail = ({ webhook, webhooksInfo, fetchWebhooks, onBack, onSelectA
                   {!sendForAllActions ? (
                     <Elem name="content-row-actions">
                       <Elem tag="h4" name="title" mod={{ black: true }}>
-                        Send Payload for
+                        将以下通知webhook
                       </Elem>
                       <Elem name="actions">
                         {Object.entries(webhooksInfo).map(([key, value]) => {
@@ -253,17 +253,17 @@ const WebhookDetail = ({ webhook, webhooksInfo, fetchWebhooks, onBack, onSelectA
                     })
                   }
                 >
-                  Delete Webhook
+                  删除
                 </Button>
               )}
               <div className={rootClass.elem("status")}>
                 <Form.Indicator />
               </div>
               <Button type="button" className={rootClass.elem("cancel-button")} onClick={onBack}>
-                Cancel
+                取消
               </Button>
               <Button primary className={rootClass.elem("save-button")}>
-                {webhook === null ? "Add Webhook" : "Save"}
+                {webhook === null ? "添加" : "保存"}
               </Button>
             </Elem>
           </Form>

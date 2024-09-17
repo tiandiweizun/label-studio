@@ -94,7 +94,7 @@ urlpatterns = [
         r'^swagger(?P<format>\.json|\.yaml)$', private_schema_view.without_ui(cache_timeout=0), name='schema-json'
     ),
     re_path(r'^swagger/$', private_schema_view.with_ui('swagger', cache_timeout=0), name='schema-swagger-ui'),
-    path('docs/api/', public_schema_view.with_ui('redoc', cache_timeout=0), name='schema-redoc'),
+    # path('docs/api/', public_schema_view.with_ui('redoc', cache_timeout=0), name='schema-redoc'),
     path(
         'docs/',
         RedirectView.as_view(url='/static/docs/public/guide/introduction.html', permanent=False),
