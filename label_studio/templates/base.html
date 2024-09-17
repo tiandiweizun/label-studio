@@ -4,10 +4,10 @@
 {% load filters %}
 
 <!doctype html>
-<html lang="en">
+<html lang="zh">
 <head>
   <meta charset="utf-8"/>
-  <meta name="author" content="Label Studio"/>
+  <meta name="author" content="自动化标注"/>
   <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=0.9, shrink-to-fit=no">
 
@@ -21,7 +21,7 @@
   <link rel="preload" href="{{settings.HOSTNAME}}{% static 'fonts/Figtree-SemiBold.ttf' %}" type="font" crossorigin="anonymous">
 
   <!-- CSS -->
-  <link href="{{settings.HOSTNAME}}{% static 'images/favicon.ico' %}" rel="shortcut icon"/>
+<!--  <link href="{{settings.HOSTNAME}}{% static 'images/favicon.ico' %}" rel="shortcut icon"/>-->
   <link href="{{settings.HOSTNAME}}{% static 'css/uikit.css' %}" rel="stylesheet">
   <link href="{{settings.HOSTNAME}}{% static 'css/main.css' %}" rel="stylesheet">
   <link href="{{settings.FRONTEND_HOSTNAME}}/react-app/main.css?v={{ versions.backend.commit }}" rel="stylesheet">
@@ -39,7 +39,7 @@
   </script>
 
   {% block head %}
-    <title>Label Studio</title>
+    <title>自动化标注</title>
   {% endblock %}
 
   {% block head-toast %}

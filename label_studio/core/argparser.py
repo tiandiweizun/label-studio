@@ -36,7 +36,7 @@ def parse_input_args(input_args):
         '-db', '--database', dest='database', help='Database file path for storing tasks and annotations'
     )
     root_parser.add_argument('--data-dir', dest='data_dir', help='Directory for storing all application related data')
-    root_parser.add_argument('-d', '--debug', dest='debug', action='store_true', help='Debug mode', default=False)
+    root_parser.add_argument('-d', '--debug', dest='debug', action='store_true', help='Debug mode', default=True)
     default_config_path = find_file('default_config.json')
     root_parser.add_argument(
         '-c', '--config', dest='config_path', type=valid_filepath, default=default_config_path, help='Server config'

@@ -12,10 +12,10 @@ PASS_MAX_LENGTH = 64
 PASS_MIN_LENGTH = 8
 USERNAME_MAX_LENGTH = 30
 DISPLAY_NAME_LENGTH = 100
-USERNAME_LENGTH_ERR = 'Please enter a username 30 characters or fewer in length'
-DISPLAY_NAME_LENGTH_ERR = 'Please enter a display name 100 characters or fewer in length'
-PASS_LENGTH_ERR = 'Please enter a password 8-12 characters in length'
-INVALID_USER_ERROR = "The email and password you entered don't match."
+USERNAME_LENGTH_ERR = '请输入用户名'
+DISPLAY_NAME_LENGTH_ERR = '请输入昵称'
+PASS_LENGTH_ERR = '建议密码长度在8-12位'
+INVALID_USER_ERROR = "用户名或密码错误"
 
 logger = logging.getLogger(__name__)
 
@@ -33,7 +33,7 @@ class LoginForm(forms.Form):
         email = cleaned.get('email', '').lower()
         password = cleaned.get('password', '')
         if len(email) >= EMAIL_MAX_LENGTH:
-            raise forms.ValidationError('Email is too long')
+            raise forms.ValidationError(f'邮箱太长，不能超过{EMAIL_MAX_LENGTH}个字符')
 
         # advanced way for user auth
         user = settings.USER_AUTH(User, email, password)
@@ -50,7 +50,7 @@ class LoginForm(forms.Form):
 
 
 class UserSignupForm(forms.Form):
-    email = forms.EmailField(label='Work Email', error_messages={'required': 'Invalid email'})
+    email = forms.EmailField(label='Work Email', error_messages={'required': '邮箱错误'})
     password = forms.CharField(
         max_length=PASS_MAX_LENGTH,
         error_messages={'required': PASS_LENGTH_ERR},
@@ -67,16 +67,16 @@ class UserSignupForm(forms.Form):
     def clean_username(self):
         username = self.cleaned_data.get('username')
         if username and User.objects.filter(username=username.lower()).exists():
-            raise forms.ValidationError('User with username already exists')
+            raise forms.ValidationError('用户已经存在')
         return username
 
     def clean_email(self):
         email = self.cleaned_data.get('email').lower()
         if len(email) >= EMAIL_MAX_LENGTH:
-            raise forms.ValidationError('Email is too long')
+            raise forms.ValidationError(f'邮箱太长，不能超过{EMAIL_MAX_LENGTH}个字符')
 
         if email and User.objects.filter(email=email).exists():
-            raise forms.ValidationError('User with this email already exists')
+            raise forms.ValidationError('用户已经存在')
 
         return email
 
@@ -96,4 +96,4 @@ class UserProfileForm(forms.ModelForm):
 
     class Meta:
         model = User
-        fields = ('first_name', 'last_name', 'phone', 'allow_newsletters')
+        fields = ('first_name', 'phone', 'allow_newsletters')

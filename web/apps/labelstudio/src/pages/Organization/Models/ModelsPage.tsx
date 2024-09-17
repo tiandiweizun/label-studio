@@ -20,7 +20,7 @@ ModelsPage.context = () => {
   return (
     <Space size="small">
       <Button to="/prompt/settings" size="compact" look="primary">
-        Create Model
+        创建模型
       </Button>
     </Space>
   );

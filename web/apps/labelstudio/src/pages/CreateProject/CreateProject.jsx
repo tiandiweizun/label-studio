@@ -27,7 +27,7 @@ const ProjectName = ({ name, setName, onSaveName, onSubmit, error, description, 
       }}
     >
       <div className="field field--wide">
-        <label htmlFor="project_name">Project Name</label>
+        <label htmlFor="project_name">项目名称</label>
         <input
           name="name"
           id="project_name"
@@ -38,42 +38,42 @@ const ProjectName = ({ name, setName, onSaveName, onSubmit, error, description, 
         {error && <span className="error">{error}</span>}
       </div>
       <div className="field field--wide">
-        <label htmlFor="project_description">Description</label>
+        <label htmlFor="project_description">详细描述</label>
         <textarea
           name="description"
           id="project_description"
-          placeholder="Optional description of your project"
+          placeholder="可以写一些关于项目的介绍，方便其他人了解该项目"
           rows="4"
           value={description}
           onChange={(e) => setDescription(e.target.value)}
         />
       </div>
-      {isFF(FF_LSDV_E_297) && (
-        <div className="field field--wide">
-          <label>
-            Workspace
-            <EnterpriseBadge />
-          </label>
-          <Select placeholder="Select an option" disabled options={[]} />
-          <Caption>
-            Simplify project management by organizing projects into workspaces.
-            <a
-              href={createURL(
-                "https://docs.humansignal.com/guide/manage_projects#Create-workspaces-to-organize-projects",
-                {
-                  experiment: "project_creation_dropdown",
-                  treatment: "simplify_project_management",
-                },
-              )}
-              target="_blank"
-              rel="noreferrer"
-            >
-              Learn more
-            </a>
-          </Caption>
-          <HeidiTips collection="projectCreation" />
-        </div>
-      )}
+{/*       {isFF(FF_LSDV_E_297) && ( */}
+{/*         <div className="field field--wide"> */}
+{/*           <label> */}
+{/*             工作空间 */}
+{/*             <EnterpriseBadge /> */}
+{/*           </label> */}
+{/*           <Select placeholder="Select an option" disabled options={[]} /> */}
+{/*           <Caption> */}
+{/*             Simplify project management by organizing projects into workspaces. */}
+{/*             <a */}
+{/*               href={createURL( */}
+{/*                 "https://docs.humansignal.com/guide/manage_projects#Create-workspaces-to-organize-projects", */}
+{/*                 { */}
+{/*                   experiment: "project_creation_dropdown", */}
+{/*                   treatment: "simplify_project_management", */}
+{/*                 }, */}
+{/*               )} */}
+{/*               target="_blank" */}
+{/*               rel="noreferrer" */}
+{/*             > */}
+{/*               Learn more */}
+{/*             </a> */}
+{/*           </Caption> */}
+{/*           <HeidiTips collection="projectCreation" /> */}
+{/*         </div> */}
+{/*       )} */}
     </form>
   );
 
@@ -99,9 +99,9 @@ export const CreateProject = ({ onClose }) => {
   const rootClass = cn("create-project");
   const tabClass = rootClass.elem("tab");
   const steps = {
-    name: <span className={tabClass.mod({ disabled: !!error })}>Project Name</span>,
-    import: <span className={tabClass.mod({ disabled: uploadDisabled })}>Data Import</span>,
-    config: "Labeling Setup",
+    name: <span className={tabClass.mod({ disabled: !!error })}>项目名称</span>,
+    import: <span className={tabClass.mod({ disabled: uploadDisabled })}>数据导入</span>,
+    config: "标注设置",
   };
 
   // name intentionally skipped from deps:
@@ -171,12 +171,12 @@ export const CreateProject = ({ onClose }) => {
     <Modal onHide={onDelete} closeOnClickOutside={false} allowToInterceptEscape fullscreen visible bare>
       <div className={rootClass}>
         <Modal.Header>
-          <h1>Create Project</h1>
+          <h1>创建项目</h1>
           <ToggleItems items={steps} active={step} onSelect={setStep} />
 
           <Space>
             <Button look="danger" size="compact" onClick={onDelete} waiting={waiting}>
-              Delete
+              删除
             </Button>
             <Button
               look="primary"
@@ -185,7 +185,7 @@ export const CreateProject = ({ onClose }) => {
               waiting={waiting || uploading}
               disabled={!project || uploadDisabled || error}
             >
-              Save
+              保存
             </Button>
           </Space>
         </Modal.Header>

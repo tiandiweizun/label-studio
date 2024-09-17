@@ -10,21 +10,20 @@ class LabelStudioError(Exception):
 
 class LabelStudioAPIException(APIException):
     status_code = status.HTTP_500_INTERNAL_SERVER_ERROR
-    default_detail = 'Unknown error'
+    default_detail = '未知错误'
 
 
 class LabelStudioDatabaseException(LabelStudioAPIException):
-    default_detail = 'Error executing database query'
+    default_detail = '查询数据库出错'
 
 
 class LabelStudioDatabaseLockedException(LabelStudioAPIException):
-    default_detail = "Sqlite <a href='https://docs.djangoproject.com/en/3.1/ref/databases/#database-is-locked-errors'>doesn't operate well</a> on multiple transactions. \
-    Please be patient and try update your pages, or ping us on Slack to  get more about production-ready db"
+    default_detail = "数据库运行失败"
 
 
 class ProjectExistException(LabelStudioAPIException):
     status_code = status.HTTP_422_UNPROCESSABLE_ENTITY
-    default_detail = 'Project with the same title already exists'
+    default_detail = '同名项目已经存在'
 
 
 class LabelStudioErrorSentryIgnored(Exception):
@@ -45,6 +44,6 @@ class LabelStudioXMLSyntaxErrorSentryIgnored(Exception):
 
 class InvalidUploadUrlError(LabelStudioAPIException):
     default_detail = (
-        'The provided URL was not valid. URLs must begin with http:// or https://, and cannot be local IPs.'
+        '提供的链接非法。链接必须以http://或者https://开头, 也不能是本地的ip地址'
     )
     status_code = status.HTTP_403_FORBIDDEN

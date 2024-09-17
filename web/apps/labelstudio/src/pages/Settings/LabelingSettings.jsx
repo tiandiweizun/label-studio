@@ -89,5 +89,5 @@ export const LabelingSettings = () => {
   );
 };
 
-LabelingSettings.title = "Labeling Interface";
+LabelingSettings.title = "标注";
 LabelingSettings.path = "/labeling";

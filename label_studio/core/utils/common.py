@@ -110,7 +110,7 @@ def custom_exception_handler(exc, context):
             response.data = response_data
         # move validation errors to separate namespace
         else:
-            response_data['detail'] = 'Validation error'
+            response_data['detail'] = '验证错误'
             response_data['validation_errors'] = (
                 response.data if isinstance(response.data, dict) else {'non_field_errors': response.data}
             )
@@ -288,7 +288,7 @@ def start_browser(ls_url, no_browser):
         return
 
     browser_url = ls_url
-    threading.Timer(2.5, lambda: webbrowser.open(browser_url)).start()
+    threading.Timer(0.5, lambda: webbrowser.open(browser_url)).start()
     logger.info('Start browser at URL: ' + browser_url)
 
 

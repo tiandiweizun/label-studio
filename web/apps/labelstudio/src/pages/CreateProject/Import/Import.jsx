@@ -74,16 +74,16 @@ function getFiles(files) {
 const Footer = () => {
   return (
     <Modal.Footer>
-      <IconInfo className={importClass.elem("info-icon")} width="20" height="20" />
-      See the&nbsp;documentation to{" "}
-      <a target="_blank" href="https://labelstud.io/guide/predictions.html" rel="noreferrer">
-        import preannotated data
-      </a>{" "}
-      or&nbsp;to{" "}
-      <a target="_blank" href="https://labelstud.io/guide/storage.html" rel="noreferrer">
-        sync data from a&nbsp;database or&nbsp;cloud storage
-      </a>
-      .
+{/*       <IconInfo className={importClass.elem("info-icon")} width="20" height="20" /> */}
+{/*       See the&nbsp;documentation to{" "} */}
+{/*       <a target="_blank" href="https://labelstud.io/guide/predictions.html" rel="noreferrer"> */}
+{/*         import preannotated data */}
+{/*       </a>{" "} */}
+{/*       or&nbsp;to{" "} */}
+{/*       <a target="_blank" href="https://labelstud.io/guide/storage.html" rel="noreferrer"> */}
+{/*         sync data from a&nbsp;database or&nbsp;cloud storage */}
+{/*       </a> */}
+{/*       . */}
     </Modal.Footer>
   );
 };
@@ -267,7 +267,7 @@ export const ImportPage = ({
 
       for (const f of files) {
         if (!allSupportedExtensions.includes(getFileExtension(f.name))) {
-          onError(new Error(`The filetype of file "${f.name}" is not supported.`));
+          onError(new Error(`"非常抱歉，${f.name}的文件类型暂不支持"`));
           return;
         }
         fd.append(f.name, f);
@@ -334,31 +334,31 @@ export const ImportPage = ({
 
       <header>
         <form className={`${importClass.elem("url-form")} inline`} method="POST" onSubmit={onLoadURL}>
-          <input placeholder="Dataset URL" name="url" ref={urlRef} />
-          <button type="submit">Add URL</button>
+          <input placeholder="数据链接" name="url" ref={urlRef} />
+          <button type="submit">添加链接</button>
         </form>
-        <span>or</span>
+        <span>或者</span>
         <button
           type="button"
           onClick={() => document.getElementById("file-input").click()}
           className={importClass.elem("upload-button")}
         >
           <IconUpload width="16" height="16" className={importClass.elem("upload-icon")} />
-          Upload {files.uploaded.length ? "More " : ""}Files
+          上传 {files.uploaded.length ? "更多 " : ""}文件
         </button>
         <div
           className={importClass.elem("csv-handling").mod({ highlighted: highlightCsvHandling, hidden: !csvHandling })}
         >
-          <span>Treat CSV/TSV as</span>
+          <span>CSV/TSV的文件处理方式</span>
           <label>
-            <input {...csvProps} value="tasks" checked={csvHandling === "tasks"} /> List of tasks
+            <input {...csvProps} value="tasks" checked={csvHandling === "tasks"} /> 每行一个任务
           </label>
           <label>
-            <input {...csvProps} value="ts" checked={csvHandling === "ts"} /> Time Series or Whole Text File
+            <input {...csvProps} value="ts" checked={csvHandling === "ts"} /> 时序或者整篇文档是一个任务
           </label>
         </div>
         <div className={importClass.elem("status")}>
-          {files.uploaded.length ? `${files.uploaded.length} files uploaded` : ""}
+          {files.uploaded.length ? `${files.uploaded.length} 个文件已上传` : ""}
         </div>
       </header>
 
@@ -370,35 +370,33 @@ export const ImportPage = ({
             <label htmlFor="file-input">
               <div className={dropzoneClass.elem("content")}>
                 <header>
-                  Drag & drop files here
-                  <br />
-                  or click to browse
+                  点击或者把文件拖到这里
                 </header>
                 <IconUpload height="64" className={dropzoneClass.elem("icon")} />
                 <dl>
-                  <dt>Text</dt>
+                  <dt>文本</dt>
                   <dd>{supportedExtensions.text.join(", ")}</dd>
-                  <dt>Audio</dt>
+                  <dt>语音</dt>
                   <dd>{supportedExtensions.audio.join(", ")}</dd>
-                  <dt>Video</dt>
+                  <dt>视频</dt>
                   <dd>mpeg4/H.264 webp, webm* {/* Keep in sync with supportedExtensions.video */}</dd>
-                  <dt>Images</dt>
+                  <dt>图片</dt>
                   <dd>{supportedExtensions.image.join(", ")}</dd>
                   <dt>HTML</dt>
                   <dd>{supportedExtensions.html.join(", ")}</dd>
-                  <dt>Time Series</dt>
+                  <dt>时序</dt>
                   <dd>{supportedExtensions.timeSeries.join(", ")}</dd>
-                  <dt>Common Formats</dt>
+                  <dt>通用格式</dt>
                   <dd>{supportedExtensions.common.join(", ")}</dd>
                 </dl>
-                <b>
-                  * – Support depends on the browser
-                  <br />* – Use{" "}
-                  <a href="https://labelstud.io/guide/storage.html" target="_blank" rel="noreferrer">
-                    Cloud Storages
-                  </a>{" "}
-                  if you want to import a large number of files
-                </b>
+{/*                 <b> */}
+{/*                   * – Support depends on the browser */}
+{/*                   <br />* – Use{" "} */}
+{/*                   <a href="https://labelstud.io/guide/storage.html" target="_blank" rel="noreferrer"> */}
+{/*                     Cloud Storages */}
+{/*                   </a>{" "} */}
+{/*                   if you want to import a large number of files */}
+{/*                 </b> */}
               </div>
             </label>
           )}

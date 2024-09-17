@@ -28,7 +28,7 @@ export const GeneralSettings = () => {
   return (
     <Block name="general-settings">
       <Elem name={"wrapper"}>
-        <h1>General Settings</h1>
+        <h1>通用设置</h1>
         <Block name="settings-wrapper">
           <Form action="updateProject" formData={{ ...project }} params={{ pk: project.id }} onSubmit={updateProject}>
             <Form.Row columnCount={1} rowGap="16px">
@@ -38,7 +38,7 @@ export const GeneralSettings = () => {
               {isFF(FF_LSDV_E_297) && (
                 <Block name="workspace-placeholder">
                   <Elem name="badge-wrapper">
-                    <Elem name="title">Workspace</Elem>
+                    <Elem name="title">工作目录</Elem>
                     <EnterpriseBadge />
                   </Elem>
                   <Select placeholder="Select an option" disabled options={[]} />

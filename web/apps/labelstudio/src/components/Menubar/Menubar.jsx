@@ -148,18 +148,18 @@ export const Menubar = ({ enabled, defaultOpened, defaultPinned, children, onSid
             align="right"
             content={
               <Menu>
-                <Menu.Item icon={<LsSettings />} label="Account &amp; Settings" href="/user/account" data-external />
+                <Menu.Item icon={<LsSettings />} label="账号设置" href="/user/account" data-external />
                 {/* <Menu.Item label="Dark Mode"/> */}
-                <Menu.Item icon={<LsDoor />} label="Log Out" href={absoluteURL("/logout")} data-external />
-                {showNewsletterDot && (
-                  <>
-                    <Menu.Divider />
-                    <Menu.Item className={cn("newsletter-menu-item")} href="/user/account" data-external>
-                      <span>Please check new notification settings in the Account & Settings page</span>
-                      <span className={cn("newsletter-menu-badge")} />
-                    </Menu.Item>
-                  </>
-                )}
+                <Menu.Item icon={<LsDoor />} label="注销" href={absoluteURL("/logout")} data-external />
+{/*                 {showNewsletterDot && ( */}
+{/*                   <> */}
+{/*                     <Menu.Divider /> */}
+{/*                     <Menu.Item className={cn("newsletter-menu-item")} href="/user/account" data-external> */}
+{/*                       <span>Please check new notification settings in the Account & Settings page</span> */}
+{/*                       <span className={cn("newsletter-menu-badge")} /> */}
+{/*                     </Menu.Item> */}
+{/*                   </> */}
+{/*                 )} */}
               </Menu>
             }
           >
@@ -183,37 +183,37 @@ export const Menubar = ({ enabled, defaultOpened, defaultPinned, children, onSid
               style={{ width: 240 }}
             >
               <Menu>
-                <Menu.Item label="Projects" to="/projects" icon={<IconFolder />} data-external exact />
-                <Menu.Item label="Organization" to="/organization" icon={<IconPersonInCircle />} data-external exact />
+                <Menu.Item label="项目" to="/projects" icon={<IconFolder />} data-external exact />
+                <Menu.Item label="组织" to="/organization" icon={<IconPersonInCircle />} data-external exact />
                 {isFF(FF_DIA_835) && <Menu.Item label="Models" to={ModelsPage.path} icon={<IconModel />} exact />}
 
                 <Menu.Spacer />
 
-                <VersionNotifier showNewVersion />
+{/*                 <VersionNotifier showNewVersion /> */}
 
-                <Menu.Item
-                  label="API"
-                  href="https://api.labelstud.io/api-reference/introduction/getting-started"
-                  icon={<IconTerminal />}
-                  target="_blank"
-                />
-                <Menu.Item label="Docs" href="https://labelstud.io/guide" icon={<IconBook />} target="_blank" />
-                <Menu.Item
-                  label="GitHub"
-                  href="https://github.com/HumanSignal/label-studio"
-                  icon={<LsGitHub />}
-                  target="_blank"
-                  rel="noreferrer"
-                />
-                <Menu.Item
-                  label="Slack Community"
-                  href="https://slack.labelstud.io/?source=product-menu"
-                  icon={<LsSlack />}
-                  target="_blank"
-                  rel="noreferrer"
-                />
+{/*                 <Menu.Item */}
+{/*                   label="API" */}
+{/*                   href="https://api.labelstud.io/api-reference/introduction/getting-started" */}
+{/*                   icon={<IconTerminal />} */}
+{/*                   target="_blank" */}
+{/*                 /> */}
+{/*                 <Menu.Item label="Docs" href="https://labelstud.io/guide" icon={<IconBook />} target="_blank" /> */}
+{/*                 <Menu.Item */}
+{/*                   label="GitHub" */}
+{/*                   href="https://github.com/HumanSignal/label-studio" */}
+{/*                   icon={<LsGitHub />} */}
+{/*                   target="_blank" */}
+{/*                   rel="noreferrer" */}
+{/*                 /> */}
+{/*                 <Menu.Item */}
+{/*                   label="Slack Community" */}
+{/*                   href="https://slack.labelstud.io/?source=product-menu" */}
+{/*                   icon={<LsSlack />} */}
+{/*                   target="_blank" */}
+{/*                   rel="noreferrer" */}
+{/*                 /> */}
 
-                <VersionNotifier showCurrentVersion />
+{/*                 <VersionNotifier showCurrentVersion /> */}
 
                 <Menu.Divider />
 
@@ -223,7 +223,7 @@ export const Menubar = ({ enabled, defaultOpened, defaultPinned, children, onSid
                   onClick={sidebarPin}
                   active={sidebarPinned}
                 >
-                  {sidebarPinned ? "Unpin menu" : "Pin menu"}
+                  {sidebarPinned ? "取消固定侧边栏" : "固定侧边栏"}
                 </Menu.Item>
               </Menu>
             </Dropdown>

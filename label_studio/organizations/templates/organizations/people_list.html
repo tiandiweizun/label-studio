@@ -9,7 +9,7 @@
   {
     breadcrumbs: [
       {
-        title: "People"
+        title: "组织"
       }
     ],
   }
@@ -110,7 +110,8 @@
               .then(data => data.json())
               .then(data => data.map(u => Object.assign(u.user, {
                 member_id: u.id,
-                name: (u.user.first_name + " " + u.user.last_name).trim(),
+                name: (u.user.first_name).trim(),
+<!--                name: (u.user.first_name + " " + u.user.last_name).trim(),-->
               })))
           },
           getOne(id) {
@@ -124,19 +125,19 @@
       const HOUR = 60 * MINUTE;
       const DAY = 24 * HOUR;
       const INTERVALS = [
-        [13 * 30 * DAY, 'more than year ago'],
-        [10 * 30 * DAY, 'a year ago'],
-        [50 * DAY, 'months ago'],
-        [25 * DAY, 'a month ago'],
-        [8 * DAY, 'weeks ago'],
-        [4 * DAY, 'a week ago'],
-        [2 * DAY, 'three days ago'],
-        [20 * HOUR, 'a day ago'],
-        [6 * HOUR, 'today'],
-        [2 * HOUR, 'hours ago'],
-        [40 * MINUTE, 'a hour ago'],
-        [2 * MINUTE, 'this hour'],
-        [0, 'just now'],
+        [13 * 30 * DAY, '多年以前'],
+        [10 * 30 * DAY, '一年以前'],
+        [50 * DAY, '多月以前'],
+        [25 * DAY, '一月以前'],
+        [8 * DAY, '多周以前'],
+        [4 * DAY, '一周以前'],
+        [2 * DAY, '三天以前'],
+        [20 * HOUR, '一天以前'],
+        [6 * HOUR, '今天'],
+        [2 * HOUR, '多小时以前'],
+        [40 * MINUTE, '一小时以前'],
+        [2 * MINUTE, '2分钟以前'],
+        [0, '现在'],
       ];
 
       app = new Vue({

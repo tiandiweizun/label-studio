@@ -38,11 +38,11 @@ export const EmptyProjectsList = ({ openModal }) => {
     <Block name="empty-projects-page">
       <Elem name="heidi" tag="img" src={absoluteURL("/static/images/opossum_looking.png")} />
       <Elem name="header" tag="h1">
-        Heidi doesn’t see any projects here!
+        未找到任何可用的项目
       </Elem>
-      <p>Create one and start labeling your data.</p>
+{/*       <p>Create one and start labeling your data.</p> */}
       <Elem name="action" tag={Button} onClick={openModal} look="primary">
-        Create Project
+        创建项目
       </Elem>
     </Block>
   );
@@ -67,7 +67,7 @@ const ProjectCard = ({ project }) => {
       <Block name="project-card" mod={{ colored: !!color }} style={projectColors}>
         <Elem name="header">
           <Elem name="title">
-            <Elem name="title-text">{project.title ?? "New project"}</Elem>
+            <Elem name="title-text">{project.title ?? "新项目"}</Elem>
 
             <Elem
               name="menu"

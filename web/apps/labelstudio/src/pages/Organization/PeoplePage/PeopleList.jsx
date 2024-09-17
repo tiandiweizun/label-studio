@@ -66,13 +66,13 @@ export const PeopleList = ({ onSelect, selectedUser, defaultSelected }) => {
               <Elem name="header">
                 <Elem name="column" mix="avatar" />
                 <Elem name="column" mix="email">
-                  Email
+                  邮箱
                 </Elem>
                 <Elem name="column" mix="name">
-                  Name
+                  用户名
                 </Elem>
                 <Elem name="column" mix="last-activity">
-                  Last Activity
+                  最近活跃时间
                 </Elem>
               </Elem>
               <Elem name="body">
@@ -82,7 +82,7 @@ export const PeopleList = ({ onSelect, selectedUser, defaultSelected }) => {
                   return (
                     <Elem key={`user-${user.id}`} name="user" mod={{ active }} onClick={() => selectUser(user)}>
                       <Elem name="field" mix="avatar">
-                        <CopyableTooltip title={`User ID: ${user.id}`} textForCopy={user.id}>
+                        <CopyableTooltip title={`用户ID: ${user.id}`} textForCopy={user.id}>
                           <Userpic user={user} style={{ width: 28, height: 28 }} />
                         </CopyableTooltip>
                       </Elem>
@@ -90,7 +90,7 @@ export const PeopleList = ({ onSelect, selectedUser, defaultSelected }) => {
                         {user.email}
                       </Elem>
                       <Elem name="field" mix="name">
-                        {user.first_name} {user.last_name}
+                        {user.first_name}
                       </Elem>
                       <Elem name="field" mix="last-activity">
                         {formatDistance(new Date(user.last_activity), new Date(), { addSuffix: true })}
