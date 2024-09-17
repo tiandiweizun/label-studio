@@ -54,7 +54,7 @@ def upload_example_using_config(request):
         task_data, _, _ = get_sample_task(config, secure_mode)
         task_data = playground_replacements(request, task_data)
     except (ValueError, ValidationError, lxml.etree.Error):
-        response = HttpResponse('error while example generating', status=status.HTTP_400_BAD_REQUEST)
+        response = HttpResponse('生成样例错误', status=status.HTTP_400_BAD_REQUEST)
     else:
         response = HttpResponse(json.dumps(task_data))
     return response
