@@ -31,7 +31,7 @@ const WebhookList = ({ onSelectActive, onAddWebhook, webhooks, fetchWebhooks }) 
 
   return (
     <Block name="webhook">
-      <h1>Webhooks</h1>
+      <h1>通知</h1>
       <p>当某些特定的事件发生时（如删除项目），允许使用webhook通知外部服务</p>
       <Elem name="controls">
         <Button onClick={onAddWebhook}>添加 Webhook</Button>

@@ -54,7 +54,7 @@ export const FilterRow: FC<FilterRowInterface> = ({
     <Block name={"filter-row"} data-testid={"filter-row"}>
       <Elem name={"column"}>
         {index === 0 ? (
-          <Elem name={"title-row"}>Where</Elem>
+          <Elem name={"title-row"}>条件</Elem>
         ) : (
           <FilterDropdown
             value={logic}

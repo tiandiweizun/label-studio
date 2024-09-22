@@ -135,45 +135,44 @@ actions = [
     {
         'entry_point': retrieve_tasks_predictions,
         'permission': all_permissions.predictions_any,
-        'title': 'Retrieve Predictions',
+        'title': '检索预标注',
         'order': 90,
         'dialog': {
-            'title': 'Retrieve Predictions',
-            'text': 'Send the selected tasks to all ML backends connected to the project.'
-            'This operation might be abruptly interrupted due to a timeout. '
-            'The recommended way to get predictions is to update tasks using the Label Studio API.'
-            'Please confirm your action.',
+            'title': '检索预标注',
+            'text': '将所选任务发送到连接到项目的所有机器学习后端'
+            '此操作可能会因超时而突然中断。'        
+            '请确认是否进行此操作',
             'type': 'confirm',
         },
     },
     {
         'entry_point': delete_tasks,
         'permission': all_permissions.tasks_delete,
-        'title': 'Delete Tasks',
+        'title': '删除任务',
         'order': 100,
         'reload': True,
         'dialog': {
-            'text': 'You are going to delete the selected tasks. Please confirm your action.',
+            'text': '您正在删除选中的任务，请再次进行确认',
             'type': 'confirm',
         },
     },
     {
         'entry_point': delete_tasks_annotations,
         'permission': all_permissions.tasks_delete,
-        'title': 'Delete Annotations',
+        'title': '删除标注结果',
         'order': 101,
         'dialog': {
-            'text': 'You are going to delete all annotations from the selected tasks. Please confirm your action.',
+            'text': '您正在删除标注结果，请再次确认',
             'type': 'confirm',
         },
     },
     {
         'entry_point': delete_tasks_predictions,
         'permission': all_permissions.predictions_any,
-        'title': 'Delete Predictions',
+        'title': '删除预标注',
         'order': 102,
         'dialog': {
-            'text': 'You are going to delete all predictions from the selected tasks. Please confirm your action.',
+            'text': '您正在删除预标注结果，请再次确认',
             'type': 'confirm',
         },
     },

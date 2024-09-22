@@ -66,7 +66,7 @@ export const Toolbar = observer(({ view, history, lsf, isLabelStream, hasInstruc
                 </Tooltip>
               )}
 
-              <Tooltip title="Settings">
+              <Tooltip title="设置">
                 <Button look="dashed" icon={<Icon icon={FaCog} />} onClick={() => lsf.toggleSettings()} />
               </Tooltip>
             </Space>

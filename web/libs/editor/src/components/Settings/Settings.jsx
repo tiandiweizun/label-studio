@@ -199,12 +199,12 @@ const DEFAULT_ACTIVE = Object.keys(Settings)[0];
 const DEFAULT_MODAL_SETTINGS = isFF(FF_DEV_3873)
   ? {
       name: "settings-modal",
-      title: "Labeling Interface Settings",
+      title: "标注界面设置",
       closeIcon: <LsClose />,
     }
   : {
       name: "settings-modal-old",
-      title: "Settings",
+      title: "设置",
       bodyStyle: { paddingTop: "0" },
     };
 

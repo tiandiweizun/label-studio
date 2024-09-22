@@ -13,7 +13,7 @@ const Arrow = ({ rotate }) => (
     xmlns="http://www.w3.org/2000/svg"
     style={{ transform: rotate ? "rotate(180deg)" : undefined }}
   >
-    <title>Arrow Icon</title>
+    <title>箭头</title>
     <path d="M143 352.3L7 216.3c-9.4-9.4-9.4-24.6 0-33.9l22.6-22.6c9.4-9.4 24.6-9.4 33.9 0l96.4 96.4 96.4-96.4c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9l-136 136c-9.2 9.4-24.4 9.4-33.8 0z" />
   </svg>
 );
@@ -106,7 +106,7 @@ export const LabelButton = injector(({ store, canLabel, size, target, selectedCo
             style={primaryStyle}
             onClick={onLabelAll}
           >
-            Label {selectedCount ? selectedCount : "All"} Task{!selectedCount || selectedCount > 1 ? "s" : ""}
+            标注{selectedCount ? ` ${selectedCount}个 ` : "所有"}任务
           </Button>
           <Button
             ref={triggerRef}
@@ -120,7 +120,7 @@ export const LabelButton = injector(({ store, canLabel, size, target, selectedCo
           </Button>
         </div>
         <Button size={size} style={secondStyle} mod={{ size: size ?? "medium", disabled }} onClick={onLabelVisible}>
-          Label Tasks As Displayed
+          标注显示的任务
         </Button>
       </div>
     </Interface>

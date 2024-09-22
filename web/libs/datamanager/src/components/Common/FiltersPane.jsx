@@ -24,7 +24,7 @@ export const FiltersButton = buttonInjector(
 
       return (
         <Button ref={ref} size={size} onClick={() => sidebarEnabled && viewsStore.toggleSidebar()} {...rest}>
-          Filters{" "}
+          筛选{" "}
           {hasFilters && (
             <Badge size="small" style={{ marginLeft: 5 }}>
               {activeFiltersNumber}

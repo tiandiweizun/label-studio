@@ -1,6 +1,6 @@
 export enum Logic {
-  and = "And",
-  or = "Or",
+  and = "和",
+  or = "或",
 }
 
 export interface FilterInterface {

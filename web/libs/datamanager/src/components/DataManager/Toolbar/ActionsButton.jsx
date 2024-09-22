@@ -43,7 +43,7 @@ export const ActionsButton = injector(
         const dialog = Modal[dialogType] ?? Modal.confirm;
 
         dialog({
-          title: title ? title : destructive ? "Destructive action" : "Confirm action",
+          title: title ? title : destructive ? "危险操作" : "确认操作",
           body: buildDialogContent(text, form, formRef),
           buttonLook: destructive ? "destructive" : "primary",
           onOk() {
@@ -158,7 +158,7 @@ export const ActionsButton = injector(
         onToggle={(visible) => isFFLOPSE3 && setIsOpen(visible)}
       >
         <Button {...(isNewUI ? { className: "actionButtonPrime" } : {})} size={size} disabled={!hasSelected} {...rest}>
-          {selectedCount > 0 ? `${selectedCount} ${recordTypeLabel}${selectedCount > 1 ? "s" : ""}` : "Actions"}
+          {selectedCount > 0 ? `${selectedCount} ${recordTypeLabel}` : "行为"}
           {isNewUI ? (
             isOpen ? (
               <FaChevronUp size="12" style={{ marginLeft: 4, marginRight: -7 }} />

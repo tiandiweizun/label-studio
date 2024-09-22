@@ -266,12 +266,12 @@ class AnnotationDraftDMFieldSerializer(serializers.SerializerMethodField):
                     'created_at': {
                         'type': openapi.TYPE_STRING,
                         'format': 'date-time',
-                        'title': 'Creation time',
+                        'title': '创建时间',
                     },
                     'updated_at': {
                         'type': openapi.TYPE_STRING,
                         'format': 'date-time',
-                        'title': 'Last update time',
+                        'title': '最后更新时间',
                     },
                 },
             },

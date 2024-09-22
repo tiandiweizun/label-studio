@@ -64,7 +64,7 @@ export const unsavedChangesModal = ({
           size="compact"
           autoFocus
         >
-          {cancelText ?? "Cancel"}
+          {cancelText ?? "取消"}
         </Button>
 
         {onDiscard && (

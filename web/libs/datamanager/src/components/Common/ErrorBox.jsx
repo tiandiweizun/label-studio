@@ -32,7 +32,7 @@ export const ErrorBox = injector(({ errors }) => {
         }}
         icon={<RiErrorWarningFill color="#ff5a46" size={18} style={{ marginRight: 5 }} />}
       >
-        Errors occurred
+        发生错误
       </Button>
     </Dropdown.Trigger>
   ) : null;

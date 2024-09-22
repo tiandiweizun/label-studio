@@ -28,7 +28,7 @@ export const FiltersSidebar = sidebarInjector(({ viewsStore, sidebarEnabled, sid
             onClick={() => viewsStore.collapseFilters()}
           />
         </Elem>
-        <Elem name="title">Filters</Elem>
+        <Elem name="title">筛选规则</Elem>
       </Elem>
       <Filters sidebar={true} />
     </Block>

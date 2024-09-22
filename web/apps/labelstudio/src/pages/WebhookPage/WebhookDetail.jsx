@@ -95,7 +95,7 @@ const WebhookDetail = ({ webhook, webhooksInfo, fetchWebhooks, onBack, onSelectA
               onSelectActive(null);
             }}
           >
-            Webhooks
+            通知
           </Elem>{" "}
           / {webhook === null ? "创建Webhook" : "编辑Webhook"}
         </>
@@ -125,7 +125,7 @@ const WebhookDetail = ({ webhook, webhooksInfo, fetchWebhooks, onBack, onSelectA
             }}
           >
             <Form.Row columnCount={1}>
-              <Label text="Payload URL" large />
+              {/*<Label text="Payload URL" large />*/}
               <Space className={rootClass.elem("url-space")}>
                 <Input name="url" className={rootClass.elem("url-input")} placeholder="URL" />
                 <Space align="end" className={rootClass.elem("activator")}>
@@ -185,7 +185,7 @@ const WebhookDetail = ({ webhook, webhooksInfo, fetchWebhooks, onBack, onSelectA
             </Form.Row>
             <Block name="webhook-payload">
               <Elem name="title">
-                <Label text="Payload" large />
+                <Label text="行为（以Json形式发送）" large />
               </Elem>
               <Elem name="content">
                 <Elem name="content-row">

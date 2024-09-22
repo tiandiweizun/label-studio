@@ -49,7 +49,7 @@ export const StorageSummary = ({ target, storage, className, storageTypes = [] }
               navigator.clipboard.writeText(msg);
             }}
           >
-            Copy
+            复制
           </Button>
           {target === "export" ? (
             <a

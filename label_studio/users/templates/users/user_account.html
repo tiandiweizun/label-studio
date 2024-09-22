@@ -64,7 +64,7 @@
           </div>
 
           <button class="lsf-button-ls lsf-button-ls_look_danger" name="delete-avatar" type="button">
-            Delete
+            删除
           </button>
 
           <input class="file-input" type="file" name="avatar" value="Choose"
@@ -77,7 +77,7 @@
         </div> -->
       </div>
       <footer>
-        <p class="secondary">注册于 {{ user.date_joined|date:"M j, Y" }}, 用户ID {{ user.id }}</p>
+        <p class="secondary">注册于 {{ user.date_joined|date:"Y/m/d H:i:s" }}, 用户ID {{ user.id }}</p>
         <button class="lsf-button-ls lsf-button-ls_look_primary" onclick="smart_submit()">保存</button>
       </footer>
     </form>
@@ -138,7 +138,7 @@
         <tr><td></td><td></td></tr>
         <tr><td style="min-width: 75px">组织ID</td><td>{{ user.active_organization.id }}</td></tr>
         <tr><td>组织所有者</td><td>{{ user.active_organization.created_by }}</td></tr>
-        <tr><td>组织创建于</td><td>{{ user.active_organization.created_at }}</td></tr>
+        <tr><td>组织创建于</td><td>{{ user.active_organization.created_at|date:"Y/m/d H:i:s" }}</td></tr>
       </table>
 
     </form>

@@ -132,7 +132,8 @@ export const Menubar = ({ enabled, defaultOpened, defaultPinned, children, onSid
         <div className={menubarClass}>
           <Dropdown.Trigger dropdown={menuDropdownRef} closeOnClickOutside={!sidebarPinned}>
             <div className={`${menubarClass.elem("trigger")} main-menu-trigger`}>
-              <img src={absoluteURL("/static/icons/logo.svg")} alt="Label Studio Logo" height="22" />
+              {/*<img src={absoluteURL("/static/icons/logo.svg")} alt="乐标" height="22" />*/}
+              乐标
               <Hamburger opened={sidebarOpened} />
             </div>
           </Dropdown.Trigger>
@@ -180,7 +181,7 @@ export const Menubar = ({ enabled, defaultOpened, defaultPinned, children, onSid
               onVisibilityChanged={() => window.dispatchEvent(new Event("resize"))}
               visible={sidebarOpened}
               className={[sidebarClass, sidebarClass.mod({ floating: !sidebarPinned })].join(" ")}
-              style={{ width: 240 }}
+              style={{ width: 100 }}
             >
               <Menu>
                 <Menu.Item label="项目" to="/projects" icon={<IconFolder />} data-external exact />
@@ -218,12 +219,12 @@ export const Menubar = ({ enabled, defaultOpened, defaultPinned, children, onSid
                 <Menu.Divider />
 
                 <Menu.Item
-                  icon={<IconPin />}
+                  // icon={<IconPin />}
                   className={sidebarClass.elem("pin")}
                   onClick={sidebarPin}
                   active={sidebarPinned}
                 >
-                  {sidebarPinned ? "取消固定侧边栏" : "固定侧边栏"}
+                  {sidebarPinned ? "取消固定" : "固定"}
                 </Menu.Item>
               </Menu>
             </Dropdown>

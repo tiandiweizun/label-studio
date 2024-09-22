@@ -50,7 +50,7 @@
 
     &.appear ~ .content-wrapper__content,
     &.visible ~ .content-wrapper__content {
-      margin-left: 240px;
+      margin-left: 100px;
     }
 
     &.disappear ~ .content-wrapper__content {
