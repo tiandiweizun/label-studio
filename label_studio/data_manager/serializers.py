@@ -214,9 +214,9 @@ class UpdatedByDMFieldSerializer(serializers.SerializerMethodField):
     class Meta:
         swagger_schema_fields = {
             'type': openapi.TYPE_ARRAY,
-            'title': 'User IDs',
-            'description': 'User IDs who updated this task',
-            'items': {'type': openapi.TYPE_OBJECT, 'title': 'User IDs'},
+            'title': '所有用户ID',
+            'description': '更新本条数据的所有用户ID',
+            'items': {'type': openapi.TYPE_OBJECT, 'title': '所有用户ID'},
         }
 
 

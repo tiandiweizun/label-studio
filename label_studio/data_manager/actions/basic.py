@@ -135,11 +135,11 @@ actions = [
     {
         'entry_point': retrieve_tasks_predictions,
         'permission': all_permissions.predictions_any,
-        'title': '检索预标注',
+        'title': '使用模型预标注',
         'order': 90,
         'dialog': {
-            'title': '检索预标注',
-            'text': '将所选任务发送到连接到项目的所有机器学习后端'
+            'title': '使用模型预标注',
+            'text': '将所选任务使用模型进行预标注'
             '此操作可能会因超时而突然中断。'        
             '请确认是否进行此操作',
             'type': 'confirm',
@@ -148,21 +148,21 @@ actions = [
     {
         'entry_point': delete_tasks,
         'permission': all_permissions.tasks_delete,
-        'title': '删除任务',
+        'title': '删除待标注',
         'order': 100,
         'reload': True,
         'dialog': {
-            'text': '您正在删除选中的任务，请再次进行确认',
+            'text': '您正在删除选中的待标注数据，请再次进行确认',
             'type': 'confirm',
         },
     },
     {
         'entry_point': delete_tasks_annotations,
         'permission': all_permissions.tasks_delete,
-        'title': '删除标注结果',
+        'title': '删除已标注结果',
         'order': 101,
         'dialog': {
-            'text': '您正在删除标注结果，请再次确认',
+            'text': '您正在删除已标注结果，请再次确认',
             'type': 'confirm',
         },
     },
@@ -171,7 +171,7 @@ actions = [
         'permission': all_permissions.predictions_any,
         'title': '删除预标注',
         'order': 102,
-        'dialog': {
+            'dialog': {
             'text': '您正在删除预标注结果，请再次确认',
             'type': 'confirm',
         },

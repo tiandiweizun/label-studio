@@ -81,7 +81,7 @@ def predictions_to_annotations_form(user, project):
                 {
                     'type': 'select',
                     'name': 'model_version',
-                    'label': 'Choose predictions',
+                    'label': '选择预标注',
                     'options': versions,
                 }
             ],
@@ -93,13 +93,11 @@ actions = [
     {
         'entry_point': predictions_to_annotations,
         'permission': all_permissions.tasks_change,
-        'title': 'Create Annotations From Predictions',
+        'title': '使用预标注',
         'order': 91,
         'dialog': {
-            'title': 'Create Annotations From Predictions',
-            'text': 'Create annotations from predictions using selected predictions set '
-            'for each selected task.'
-            'Your account will be assigned as an owner to those annotations. ',
+            'title': '使用预标注',
+            'text': '如何你的账号有标注权限，可以直接使用预标注作为标注内容',
             'type': 'confirm',
             'form': predictions_to_annotations_form,
         },

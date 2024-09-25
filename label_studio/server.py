@@ -12,7 +12,7 @@ import sys
 from colorama import Fore, init
 
 if sys.platform == 'win32':
-    init(convert=True)
+        init(convert=True)
 
 # on windows there will be problems with sqlite and json1 support, so fix it
 from label_studio.core.utils.windows_sqlite_fix import windows_dll_fix

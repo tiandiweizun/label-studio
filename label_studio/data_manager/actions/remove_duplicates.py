@@ -212,15 +212,13 @@ actions = [
     {
         'entry_point': remove_duplicates,
         'permission': all_permissions.projects_change,
-        'title': 'Remove Duplicated Tasks',
+        'title': '删除重复待标注',
         'order': 95,
         'experimental': False,
         'dialog': {
+            'title': '删除重复的待标注数据',
             'text': (
-                'Confirm that you want to remove duplicated tasks with the same data fields. '
-                'Duplicated tasks will be deleted and all annotations will be moved to the first task from duplicated tasks. '
-                'Also Source Storage Links will be restored if at least one duplicated task has a storage link. '
-                "Warning: Task assignments (enterprise only) won't be saved."
+                '请确实是否删除所有字段都一样的重复性待标注数据，删除后仅保留第一条'
             ),
             'type': 'confirm',
         },
